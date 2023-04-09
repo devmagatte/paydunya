@@ -1,0 +1,5 @@
+{
+    "cancel_url": "http://magasin-le-choco.com/cancel_url.aspx",
+    "callback_url": "http://magasin-le-choco.com/callback_url.aspx",
+    "return_url": "http://magasin-le-choco.com/return_url.aspx"
+}
