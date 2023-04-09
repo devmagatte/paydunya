@@ -16,7 +16,7 @@ class Paydunya {
   Paydunya({required this.keysApi});
 
   Future<CheckoutInvoice> createChekoutInvoice({
-    required InitTransaction initTransaction,
+    required Transaction initTransaction,
   }) async {
     final uri = Uri.parse(
       keysApi.mode == PaymentMode.test

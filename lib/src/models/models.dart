@@ -6,7 +6,7 @@ export './invoice.dart';
 export './item.dart';
 export './taxe.dart';
 export './key_api.dart';
-export './request_chechout_invoice.dart';
+export './transaction.dart';
 export './store.dart';
 export './request_payment.dart';
 export './response_soft_pay.dart';

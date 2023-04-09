@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'models.dart';
 
-class InitTransaction {
+class Transaction {
   final Store store;
   final Invoice invoice;
 
@@ -19,7 +19,7 @@ class InitTransaction {
   /// La plupart des éléments sont optionnels, mais prenez l'habitude de tous les fournir car cela vous offrira beaucoup plus de flexibilité.
   ///
   /// Les nœuds obligatoires pour la soumission d'une requête de paiement de facture vers nos Endpoints API sont : le nœud racine [invoice] et son noeud enfant [total_amount] ainsi que le nœud racine [store] et son noeud enfant [name].
-  const InitTransaction({
+  const Transaction({
     required this.store,
     required this.invoice,
     this.customData,

@@ -44,54 +44,54 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _toggle() async {
     try {
+      // les cles d'acces API
       final keysApi = KeysApi(
         mode: PaymentMode.live,
-        masterKey: 'gMoguaxG-mbNq-HQUd-nstm-SBgR2Zww6x1l',
-        privateKey: 'live_private_c2leaE1joE0TaazSurVkLW2aryg',
-        token: 'gYHRvevT0ZFv4Qk54btl',
+        masterKey: 'wQzk9ZwR-Qq9m-0hD0-zpud-je5coGC3FHKW',
+        privateKey: 'live_private_rMIdJM3PLLhLjyArx9tF3VURAF5',
+        token: 'IivOiOxGJuWhc5znlIiK',
       );
 
       final paydunya = Paydunya(keysApi: keysApi);
 
-      const store = Store(
-        name: 'preparation crem',
-        tagline: '',
-        postalAdress: '',
-        phone: '',
-        logoUrl: '',
-        websiteUrl: '',
-      );
-
-      const invoice = Invoice(
-        description: '',
-        totalAmount: 200,
-      );
-
-      final result = await paydunya.createChekoutInvoice(
-        initTransaction: const InitTransaction(
-          invoice: invoice,
-          store: store,
+      // la facturation
+      const transaction = Transaction(
+        invoice: Invoice(
+          description: 'Tshirt',
+          totalAmount: 2000,
         ),
+        store: Store(name: 'Assylaye Ndiaye'),
       );
 
-      final waveRequest = RequestPayment(
-        fullName: 'Magatte Diallo',
-        phone: '771387690',
-        otp: 808656,
-        paymentToken: result.token,
+      final checkoutInvoice = await paydunya.createChekoutInvoice(
+        initTransaction: transaction,
       );
 
-      final response = await paydunya.orangeMoneySenegal(
-        requestPayment: waveRequest,
+      // Renseigner les information du Paiement pour softPay
+      // final requestPayment = RequestPayment(
+      //   fullName: 'Magatte Diallo',
+      //   phone: '771387690',
+      //   otp: 808656,
+      //   paymentToken: checkoutInvoice.token,
+      // );
+
+      // payer avec orange money senegal
+      // final response = await paydunya.orangeMoneySenegal(
+      //   requestPayment: requestPayment,
+      // );
+
+      // payer avec orange money senegal
+      //  final response = await paydunya.wave(
+      //   requestPayment: requestPayment,
+      // );
+
+      // debugPrint("wave url: ${response.url}");
+
+      final statusPaiement = await paydunya.verifyStatePayment(
+        invoiceToken: checkoutInvoice.token,
       );
 
-      debugPrint("wave url: ${response.url}");
-
-      final data = await paydunya.verifyStatePayment(
-        invoiceToken: result.token,
-      );
-
-      debugPrint("Status: ${data.status}");
+      debugPrint("Status: ${statusPaiement.status}");
     } catch (e) {
       debugPrint(e.toString());
     }
