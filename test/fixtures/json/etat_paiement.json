@@ -1,0 +1,56 @@
+{
+    "response_code": "00",
+    "response_text": "Transaction Found",
+    "hash": "85c6564b0e29c7955633594bc8aca0d007dc1fce3f67bd3accb00ae4e9d39ae528574be9a6ea8bde81fcbb0bc0fae3e56eb1bbedcd4d119a7fd24b0d44ab3770",
+    "invoice": {
+        "token": "test_1r0PsBDo11",
+        "items": {
+            "item_0": {
+                "name": "Magatte Dialloe",
+                "quantity": 2,
+                "unit_price": 1000,
+                "total_price": 2000,
+                "description": "description"
+            },
+            "item_1": {
+                "name": "Magatte Dialloe",
+                "quantity": 2,
+                "unit_price": 1000,
+                "total_price": 2000,
+                "description": "description"
+            }
+        },
+        "taxes": {
+            "tax_0": {
+                "name": "Livraison",
+                "amount": 1000
+            },
+            "tax_1": {
+                "name": "Livraison",
+                "amount": 1000
+            }
+        },
+        "total_amount": 5000,
+        "description": ""
+    },
+    "custom_data": {
+        "categorie": "Jeu concours",
+        "periode": "Noël 2015",
+        "numero_gagnant": 5,
+        "prix": "Bon de réduction de 50%"
+    },
+    "actions": {
+        "cancel_url": "http://magasin-le-choco.com/cancel_url.aspx",
+        "callback_url": "http://magasin-le-choco.com/callback_url.aspx",
+        "return_url": "http://magasin-le-choco.com/return_url.aspx"
+    },
+    "mode": "test",
+    "status": "completed",
+    "fail_reason": "",
+    "customer": {
+        "name": "Alioune Faye",
+        "phone": "774563209",
+        "email": "aliounefaye@gmail.com"
+    },
+    "receipt_url": "https://paydunya.com/sandbox-checkout/receipt/pdf/test_Jh2T8skw1j.pdf"
+}

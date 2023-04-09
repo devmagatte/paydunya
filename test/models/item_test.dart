@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:paydunya/core/models/item.dart';
+import 'package:paydunya/src/models/item.dart';
 
 import '../fixtures/fixture.dart';
 import '../fixtures/models/model_test.dart';

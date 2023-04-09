@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:paydunya/core/models/taxe.dart';
+import 'package:paydunya/src/models/taxe.dart';
 
 import '../fixtures/fixture.dart';
 import '../fixtures/models/model_test.dart';

@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:paydunya/core/models/actions.dart';
+import 'package:paydunya/src/models/actions.dart';
 
 import '../fixtures/fixture.dart';
 import '../fixtures/models/model_test.dart';
@@ -11,7 +11,7 @@ void main() {
     final jsonMap = json.decode(fixture('action.json'));
 
     test('Should return a valid model', () {
-      final result = Action.fromMap(jsonMap);
+      final result = Actions.fromMap(jsonMap);
 
       expect(result, tAction);
     });

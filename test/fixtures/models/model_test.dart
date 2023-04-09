@@ -1,8 +1,4 @@
-import 'package:paydunya/core/models/actions.dart';
-import 'package:paydunya/core/models/custom_data.dart';
-import 'package:paydunya/core/models/invoice.dart';
-import 'package:paydunya/core/models/item.dart';
-import 'package:paydunya/core/models/taxe.dart';
+import 'package:paydunya/src/models/models.dart';
 
 const tItem = Item(
   name: "Magatte Dialloe",
@@ -31,7 +27,7 @@ const tInvoice = Invoice(
   ],
 );
 
-const tAction = Action(
+const tAction = Actions(
   cancelUrl: "http://magasin-le-choco.com/cancel_url.aspx",
   returnUrl: "http://magasin-le-choco.com/return_url.aspx",
   callbackUrl: "http://magasin-le-choco.com/callback_url.aspx",
@@ -43,3 +39,22 @@ const tCustomData = CustomData(
   numeroGagnant: 5,
   prix: "Bon de réduction de 50%",
 );
+
+const tEtatPaiement = StatusPayment(
+  reponseCode: '00',
+  responseText: "Transaction Found",
+  mode: "test",
+  status: "completed",
+  hash:
+      "85c6564b0e29c7955633594bc8aca0d007dc1fce3f67bd3accb00ae4e9d39ae528574be9a6ea8bde81fcbb0bc0fae3e56eb1bbedcd4d119a7fd24b0d44ab3770",
+  invoice: tInvoice,
+  customData: tCustomData,
+  actions: tAction,
+);
+
+const tCheckoutInvoice = CheckoutInvoice(
+    reponseCode: "00",
+    responseText:
+        "https://app.paydunya.com/checkout/invoice/ERtyuILouhhRHICF0HboN",
+    description: "Checkout Invoice Created",
+    token: "ERtyuILouhhRHICF0HboN");
