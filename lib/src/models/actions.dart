@@ -1,18 +1,18 @@
 import 'package:equatable/equatable.dart';
 
-class Actions extends Equatable {
+class ActionsUrl extends Equatable {
   final String cancelUrl;
   final String returnUrl;
   final String callbackUrl;
 
-  const Actions({
+  const ActionsUrl({
     required this.cancelUrl,
     required this.returnUrl,
     required this.callbackUrl,
   });
 
-  factory Actions.fromMap(Map<String, dynamic> map) {
-    return Actions(
+  factory ActionsUrl.fromMap(Map<String, dynamic> map) {
+    return ActionsUrl(
       cancelUrl: map['cancel_url'] ?? '',
       returnUrl: map['return_url'] ?? '',
       callbackUrl: map['callback_url'] ?? '',

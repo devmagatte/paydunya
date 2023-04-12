@@ -11,7 +11,7 @@ void main() {
     final jsonMap = json.decode(fixture('action.json'));
 
     test('Should return a valid model', () {
-      final result = Actions.fromMap(jsonMap);
+      final result = ActionsUrl.fromMap(jsonMap);
 
       expect(result, tAction);
     });

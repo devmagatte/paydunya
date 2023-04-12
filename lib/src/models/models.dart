@@ -1,12 +1,11 @@
 export './actions.dart';
 export './checkout_invoice.dart';
-export './custom_data.dart';
 export './etat_paiement.dart';
 export './invoice.dart';
 export './item.dart';
 export './taxe.dart';
 export './key_api.dart';
-export './transaction.dart';
+export './billing.dart';
 export './store.dart';
 export './request_payment.dart';
 export './response_soft_pay.dart';

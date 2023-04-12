@@ -44,37 +44,41 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _toggle() async {
     try {
-      // les clés d'acces API et le environnement
+      // les clés d'acces API et  d'environnement
       final keysApi = KeysApi(
-        mode: Environment.live,
-        masterKey: 'gMoguaxG-mbNq-HQUd-nstm-SBgR2Zww6x1l',
-        privateKey: 'live_private_c2leaE1joE0TaazSurVkLW2aryg',
-        token: 'gYHRvevT0ZFv4Qk54btl',
+        mode: Environment.test,
+        masterKey: 'wQzk9ZwR-Qq9m-0hD0-zpud-je5coGC3FHKW',
+        privateKey: 'test_private_rMIdJM3PLLhLjyArx9tF3VURAF5',
+        token: 'IivOiOxGJuWhc5znlIiK',
       );
 
       final paydunya = Paydunya(keysApi: keysApi);
 
       // la facturation
-      const transaction = Transaction(
-        invoice: Invoice(description: 'Tshirt', totalAmount: 2000),
-        store: Store(name: 'Maglin Corp'),
+      const store = Store(name: 'Royal Event');
+      const invoice = Invoice(totalAmount: 2000);
+
+      const billing = Billing(
+        store: store,
+        invoice: invoice,
       );
 
-      final checkoutInvoice = await paydunya.createChekoutInvoice(
-        initTransaction: transaction,
-      );
+      final checkoutInvoice =
+          await paydunya.createChekoutInvoice(billing: billing);
+
+      debugPrint("Token: ${checkoutInvoice.token}");
 
       // Renseigner les informations du Paiement
       final payerInfo = PayerInfo(
         fullName: 'Magatte Diallo',
-        phone: '771387690',
-        // otp: 808656,
+        phone: '771776787',
+        otp: 808656,
         paymentToken: checkoutInvoice.token,
       );
 
       // Effectuer le paiement avec une méthode de paiement
       final response = await paydunya.pay(
-        paymentMethod: PaymentMethod.waveSenegal,
+        paymentMethod: PaymentMethod.orangeMoneySenegal,
         payerInfo: payerInfo,
       );
 
@@ -86,7 +90,7 @@ class _MyHomePageState extends State<MyHomePage> {
         invoiceToken: checkoutInvoice.token,
       );
 
-      // Afficher le status du paiement
+      // Afficher le status du paiement\
       debugPrint("Status: ${statusPaiement.status}");
     } catch (e) {
       debugPrint(e.toString());

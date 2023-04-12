@@ -27,17 +27,10 @@ const tInvoice = Invoice(
   ],
 );
 
-const tAction = Actions(
+const tAction = ActionsUrl(
   cancelUrl: "http://magasin-le-choco.com/cancel_url.aspx",
   returnUrl: "http://magasin-le-choco.com/return_url.aspx",
   callbackUrl: "http://magasin-le-choco.com/callback_url.aspx",
-);
-
-const tCustomData = CustomData(
-  categorie: "Jeu concours",
-  periode: "Noël 2015",
-  numeroGagnant: 5,
-  prix: "Bon de réduction de 50%",
 );
 
 const tEtatPaiement = StatusPayment(
@@ -48,7 +41,12 @@ const tEtatPaiement = StatusPayment(
   hash:
       "85c6564b0e29c7955633594bc8aca0d007dc1fce3f67bd3accb00ae4e9d39ae528574be9a6ea8bde81fcbb0bc0fae3e56eb1bbedcd4d119a7fd24b0d44ab3770",
   invoice: tInvoice,
-  customData: tCustomData,
+  customData: {
+    "categorie": "Jeu concours",
+    "periode": "Noël 2015",
+    "numero_gagnant": 5,
+    "prix": "Bon de réduction de 50%"
+  },
   actions: tAction,
 );
 

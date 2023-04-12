@@ -8,7 +8,7 @@ import 'taxe.dart';
 class Invoice extends Equatable {
   final String? token;
   final num totalAmount;
-  final String description;
+  final String? description;
 
   ///  Les "items" sont utilisés pour afficher au client sur la page de paiement la liste des articles qu'il a commandé.
   ///  PayDunya n'utilisera en aucun cas l'un des montants déclarés dans "[items]" pour facturer le client.
@@ -20,7 +20,7 @@ class Invoice extends Equatable {
   const Invoice({
     this.token,
     required this.totalAmount,
-    required this.description,
+    this.description,
     this.items,
     this.taxes,
   });

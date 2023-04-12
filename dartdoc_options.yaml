@@ -1,0 +1,16 @@
+dartdoc:
+  categories:
+    "Configuration":
+      markdown: doc/category/config.md
+      name: Configuration
+    "Facturation":
+      markdown: doc/category/facturation.md
+      name: Facturation
+    "Payment":
+      markdown: doc/category/paiement.md
+      name: Payment
+  categoryOrder: ["Configuration","Facturation","Payment", ]
+  showUndocumentedCategories: true
+  ignore:
+    - broken-link
+    - missing-from-search-index

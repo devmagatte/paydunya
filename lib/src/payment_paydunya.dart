@@ -4,6 +4,7 @@ import '../src/constants/constants.dart';
 import '../src/models/models.dart';
 import '../src/plateform/request.dart';
 
+/// {@category Payment}
 class PaymentPaydunya {
   final KeysApi keysApi;
   final RequestProviderImpl request;

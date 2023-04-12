@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="Configuration topic docs, for the Dart programming language.">
+  <title>Configuration topic - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">paydunya</a></li>
+    <li class="self-crumb">Configuration topic</li>
+  </ol>
+  <div class="self-name">Configuration</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span id="dark-theme-button" class="material-symbols-outlined">
+        brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+
+<div id="dartdoc-main-content" class="main-content">
+  <h1><span class="kind-category">Configuration</span> topic</h1>
+  
+<section class="desc markdown">
+  <p><strong>API keys</strong> are unique digital references that identify your account and applications in PayDunya systems. They are necessary for any integration of PayDunya payment APIs.</p>
+<p>Here are the steps to follow to obtain your API keys:</p>
+<ol>
+<li>
+<p>Create a PayDunya Business account if you don't already have one by signing up on <a href="https://paydunya.com/signup">the registration page</a></p>
+</li>
+<li>
+<p>Once logged in to your account, click on the <strong><em>"oneAPI"</em></strong> option in the menu on the left.</p>
+</li>
+</ol>
+<p>Cliquez sur "Configurer une nouvelle application" et remplissez le formulaire correspondant.</p>
+<p>Click on "Configure a new application" and fill in the corresponding form.</p>
+<p>Choose the test mode "I WANT TO MAKE PAYMENT TESTS" or the production mode "ACTIVATE THE PRODUCTION MODE".</p>
+<h3 id="environments">Environments</h3>
+<p>You can choose between two environments: <strong><em>test</em></strong> or <strong><em>live</em></strong> depending on the API keys.</p>
+<ul>
+<li>Test environment</li>
+</ul>
+<pre class="language-dart"><code class="language-dart">Environment.test
+</code></pre>
+<ul>
+<li>Production environment</li>
+</ul>
+<pre class="language-dart"><code class="language-dart">Environment.live
+</code></pre>
+<h3 id="get-started">Get started</h3>
+<p>To get started, follow the <a href="https://pub.dev/packages/paydunya/install">package installation instructions</a> and add a Paydunya to your app:</p>
+<pre class="language-dart"><code class="language-dart">import 'package:paydunya/paydunya.dart';
+</code></pre>
+<h3 id="use-test-api-keys">Use Test API Keys</h3>
+<pre class="language-dart"><code class="language-dart">final keysApi = KeysApi(
+    mode: Environment.live,
+    masterKey: 'wQzk9ZwR-Qq9m-0hD0-zpud-je5coGC3FHKW',
+    privateKey: 'test_private_rMIdJM3PLLhLjyArx9tF3VURAF5',
+    token: 'IivOiOxGJuWhc5znlIiK',
+);
+</code></pre>
+<h3 id="use-production-api-keys">Use Production API Keys</h3>
+<p>If you want to use the <a href="https://developers.paydunya.com/doc/FR/softpay">SoftPay</a> payment service, you must provide your production keys.</p>
+<pre class="language-dart"><code class="language-dart">final keysApi = KeysApi(
+    mode: Environment.test,
+    masterKey: 'wQzk9ZwR-Qq9m-0hD0-zpud-je5coGC3FHKW',
+    privateKey: 'live_private_rMIdJM3PLLhLjyArx9tF3VURAF5',
+    token: 'IivOiOxGJuWhc5znlIiK',
+);
+</code></pre>
+</section>
+
+
+
+  <section class="summary offset-anchor" id="classes">
+    <h2>Classes</h2>
+
+    <dl>
+      <dt id="KeysApi">
+  <span class="name "><a href="../paydunya/KeysApi-class.html">KeysApi</a></span> 
+    <span class="category configuration cp-0 linked" title="This is part of the Configuration topic."><a href="../topics/Configuration-topic.html">Configuration</a></span>
+
+</dt>
+<dd>
+  Les clés d'API sont vos références numériques auprès des systèmes de PayDunya.
+</dd>
+
+    </dl>
+  </section>
+
+
+
+
+
+
+  <section class="summary offset-anchor" id="enums">
+    <h2>Enums</h2>
+
+    <dl>
+      <dt id="Environment">
+  <span class="name "><a href="../paydunya/Environment.html">Environment</a></span> 
+    <span class="category configuration cp-0 linked" title="This is part of the Configuration topic."><a href="../topics/Configuration-topic.html">Configuration</a></span>
+
+</dt>
+<dd>
+  
+</dd>
+
+    </dl>
+  </section>
+
+
+
+</div> <!-- /.main-content -->
+
+<div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+  <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="../index.html">paydunya</a></li>
+  <li class="self-crumb">Configuration topic</li>
+</ol>
+
+
+  <h5><span class="package-name">paydunya</span> <span class="package-kind">package</span></h5>
+  <ol>
+      <li class="section-title">Topics</li>
+        <li><a href="../topics/Configuration-topic.html">Configuration</a></li>
+        <li><a href="../topics/Facturation-topic.html">Facturation</a></li>
+        <li><a href="../topics/Payment-topic.html">Payment</a></li>
+      <li class="section-title">Libraries</li>
+      <li><a href="../paydunya/paydunya-library.html">paydunya</a></li>
+</ol>
+
+</div>
+
+<div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  <h5>Configuration topic</h5>
+  <ol>
+
+
+    <li class="section-title"><a href="../topics/Configuration-topic.html#classes">Classes</a></li>
+      <li><a href="../paydunya/KeysApi-class.html">KeysApi</a></li>
+
+
+
+
+    <li class="section-title"><a href="../topics/Configuration-topic.html#enums">Enums</a></li>
+      <li><a href="../paydunya/Environment.html">Environment</a></li>
+
+
+</ol>
+
+</div>
+<!--/sidebar-offcanvas-right-->
+</main>
+
+<footer>
+  <span class="no-break">
+    paydunya
+      1.0.1
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+

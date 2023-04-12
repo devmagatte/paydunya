@@ -1,3 +1,4 @@
+/// {@category Configuration}
 enum Environment {
   /// En mode test
   test,

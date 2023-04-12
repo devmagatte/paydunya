@@ -1,6 +1,4 @@
-import 'custom_data.dart';
-import 'invoice.dart';
-import 'actions.dart';
+import 'models.dart';
 import 'response_api.dart';
 
 class StatusPayment extends ResponseApi {
@@ -8,8 +6,8 @@ class StatusPayment extends ResponseApi {
   final String status;
   final String hash;
   final Invoice invoice;
-  final CustomData customData;
-  final Actions actions;
+  final Map<String, dynamic> customData;
+  final ActionsUrl actions;
 
   const StatusPayment({
     required super.reponseCode,
@@ -30,8 +28,8 @@ class StatusPayment extends ResponseApi {
       status: map['status'],
       hash: map['hash'],
       invoice: Invoice.fromMap(map['invoice']),
-      customData: CustomData.fromMap(map['custom_data']),
-      actions: Actions.fromMap(map['actions']),
+      customData: map['custom_data'],
+      actions: ActionsUrl.fromMap(map['actions']),
     );
   }
 }
