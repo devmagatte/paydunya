@@ -2,7 +2,7 @@
 
 ## 1.0.2
 
-- Utilisation de softPay: free Money Senegal
+- Utilisation de softPay: free Money Senegal.
 
 ## 1.0.1
 
