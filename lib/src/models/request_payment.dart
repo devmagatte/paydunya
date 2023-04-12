@@ -2,14 +2,14 @@ import 'dart:convert';
 
 import 'package:equatable/equatable.dart';
 
-class RequestPayment extends Equatable {
+class PayerInfo extends Equatable {
   final String fullName;
   final String? email;
   final int? otp;
   final String phone;
   final String paymentToken;
 
-  const RequestPayment({
+  const PayerInfo({
     this.email,
     this.otp,
     required this.fullName,
@@ -17,11 +17,18 @@ class RequestPayment extends Equatable {
     required this.paymentToken,
   });
 
-  String toJsonWave() => json.encode({
+  String toJsonWaveSenegal() => json.encode({
         "wave_senegal_fullName": fullName,
         "wave_senegal_email": email,
         "wave_senegal_phone": phone,
         "wave_senegal_payment_token": paymentToken
+      });
+
+  String toJsonFreeMoneySenegal() => json.encode({
+        "customer_name": fullName,
+        "customer_email": email,
+        "phone_number": phone,
+        "payment_token": paymentToken
       });
 
   String toJsonOrangeMoneySenegal() => json.encode({

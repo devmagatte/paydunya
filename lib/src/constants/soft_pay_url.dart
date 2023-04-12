@@ -12,4 +12,7 @@ class SoftPayUrl {
 
   static const orangeMoneySenegalUrl =
       'https://app.paydunya.com/api/v1/softpay/orange-money-senegal';
+
+  static const freeMoneySenegalUrl =
+      'https://app.paydunya.com/api/v1/softpay/free-money-senegal';
 }

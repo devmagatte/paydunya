@@ -3,7 +3,7 @@ import 'dart:convert';
 import '../constants/payment_mode.dart';
 
 class KeysApi {
-  final PaymentMode mode;
+  final Environment mode;
   final String masterKey;
   final String privateKey;
   final String token;

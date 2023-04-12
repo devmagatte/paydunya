@@ -1,4 +1,4 @@
-enum PaymentMode {
+enum Environment {
   /// En mode test
   test,
 
