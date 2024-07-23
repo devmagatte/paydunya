@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.3
+
+- Mise à jour du SDK et des packages utilisés.
+
 ## 1.0.2
 
 - Utilisation de softPay: free Money Senegal.
