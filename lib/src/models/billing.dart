@@ -25,7 +25,7 @@ class Billing {
     this.actions,
   });
 
-  /// {@nodoc}
+  // {@nodoc}
   Map<String, dynamic> toMap() => {
         "store": store.toMap(),
         "invoice": invoice.toMap(),
@@ -33,6 +33,6 @@ class Billing {
         "actions": customData != null ? actions!.toMap() : null
       };
 
-  /// {@nodoc}
+  // {@nodoc}
   String toJson() => json.encode(toMap());
 }
